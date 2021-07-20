@@ -24,6 +24,7 @@ export default function Home() {
                             Email
                             <input
                                 type="email"
+                                placeholder = "Digite um email..."
                                 {...register("usuario", {
                                     required: true,
                                     pattern:
@@ -38,6 +39,7 @@ export default function Home() {
                             Senha
                             <input
                                 type="password"
+                                placeholder="Digite uma senha..."
                                 {...register("senha", { required: true })}
                             />
                         </label>
