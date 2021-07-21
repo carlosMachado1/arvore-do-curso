@@ -2,6 +2,7 @@ import Head from "next/head"
 import Login from "../interfaces/login"
 import { useForm, SubmitHandler } from "react-hook-form"
 import styles from "../styles/pages/Home.module.css"
+import Link from "next/link"
 
 export default function Home() {
     const {
@@ -51,7 +52,7 @@ export default function Home() {
                 </form>
                 <p>Não possui cadastro?</p>
                 <p>
-                    <span>Cadastre-se aqui</span>
+                    <Link href = "/cadastro"><a>Cadastre-se aqui</a></Link>
                 </p>
             </div>
         </div>
