@@ -19,7 +19,6 @@ export default function Home() {
             </Head>
 
             <div>
-                <h1>olá mundo!</h1> 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <label>
@@ -55,7 +54,6 @@ export default function Home() {
                 <p>
                     <Link href = "/cadastro"><a>Cadastre-se aqui</a></Link>
                 </p>
-                <h1>olá mundo!</h1>
             </div>
         </div>
     )
