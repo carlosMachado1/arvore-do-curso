@@ -1,9 +1,12 @@
 import { SideMenu } from "../components/sideMenu"
+import {Content} from "../components/content"
 
 export default function Teste() {
     return (
         <div>
-            <SideMenu />
+            <div>
+                <Content />
+            </div>
         </div>
     )
 }

@@ -1,13 +1,9 @@
-export function Content() {
-    return (
-        <div>
-            <div>
-                <input type="text" />
-                <span>lupa</span>
-                <span>add</span>
-            </div>
+import styles from "../styles/components/Content.module.css"
 
-            <div>pensar como fazer</div>
+export function Content() {
+    return(
+        <div className = {styles.container}>
+            
         </div>
     )
 }
