@@ -1,16 +1,27 @@
 class Curso {
-    constructor(nome, periodo, id){
+    constructor(nome, qtdperiodos, id){
         this.nome = nome,
-        this.periodo = periodo,
+        this.qtdperiodos = qtdperiodos,
         this.id = id   
     }
-
-    get nome() {
+    //Getters
+    get Nome() {
         return this.nome
     }
-
-
+    get QtdPeriodos() {
+        return this.qtdperiodos
+    }
+    get Id(){
+        return this.id
+    }
+    //Seters
     set nomeCurso(nomeCurso) {
         this.nome = nomeCurso
+    }
+    set periodosCurso(periodosCurso) {
+        this.qtdperiodos = periodosCurso
+    }
+    set idCurso(idCurso) {
+        this.id = idCurso
     }
 }
