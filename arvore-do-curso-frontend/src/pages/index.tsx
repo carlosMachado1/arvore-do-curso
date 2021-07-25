@@ -14,7 +14,7 @@ export default function Home() {
     } = useForm<Login>()
     const onSubmit: SubmitHandler<Login> = (data) => {
         console.log(data)
-        router.push("/principal")
+        router.push("/principal/cursos")
     }
 
     return (
