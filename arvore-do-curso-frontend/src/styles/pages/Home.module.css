@@ -1,0 +1,78 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../public/images/Fundo.png");
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #bbe5b0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.label {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.input {
+    width: 20rem;
+    height: 2.1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    outline: none;
+    border: none;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+}
+
+.input::placeholder {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.button {
+    background-color: #64a554;
+    border: none;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.moreText {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 0.25rem;
+}
+
+.moreLink {
+    text-decoration: none;
+    color: #1d741b;
+}
+
+.moreLink:hover {
+    color: brown;
+}

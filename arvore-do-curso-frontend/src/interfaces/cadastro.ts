@@ -1,5 +1,5 @@
-export interface CadastroForm{
-    nome: string;
+export interface CadastroForm {
+    nome: string
     email: string
     senha: string
     confirmSenha: string
