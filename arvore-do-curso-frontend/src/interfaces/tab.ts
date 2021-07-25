@@ -1,3 +1,3 @@
-export default interface TabProps { 
+export default interface TabProps {
     component: object
 }

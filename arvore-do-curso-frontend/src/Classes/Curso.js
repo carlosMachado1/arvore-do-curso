@@ -1,8 +1,6 @@
 class Curso {
-    constructor(nome, qtdperiodos, id){
-        this.nome = nome,
-        this.qtdperiodos = qtdperiodos,
-        this.id = id   
+    constructor(nome, qtdperiodos, id) {
+        ;(this.nome = nome), (this.qtdperiodos = qtdperiodos), (this.id = id)
     }
     //Getters
     get Nome() {
@@ -11,7 +9,7 @@ class Curso {
     get QtdPeriodos() {
         return this.qtdperiodos
     }
-    get Id(){
+    get Id() {
         return this.id
     }
     //Seters

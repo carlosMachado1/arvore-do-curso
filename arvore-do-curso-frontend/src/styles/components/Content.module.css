@@ -13,11 +13,11 @@
 .icon {
     position: absolute;
     pointer-events: none;
-    margin: .7rem 0 .4rem .625rem;
+    margin: 0.7rem 0 0.4rem 0.625rem;
 }
 
 .input {
-    padding: .625rem 1rem .625rem 2.5rem;
+    padding: 0.625rem 1rem 0.625rem 2.5rem;
     font-size: 1rem;
     font-weight: 300;
     outline: none;
@@ -34,7 +34,7 @@
 
 .addIcon {
     margin-left: 1rem;
-    margin-top: .3rem;
+    margin-top: 0.3rem;
 }
 
 .searchRow {
@@ -55,7 +55,7 @@
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid #000;
-    margin-top: 1rem
+    margin-top: 1rem;
 }
 
 .dataName {

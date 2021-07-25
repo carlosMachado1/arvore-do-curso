@@ -15,7 +15,6 @@ export default function Cadastro() {
     const onSubmit: SubmitHandler<CadastroForm> = (data) => {
         console.log(data)
         router.push("/principal/cursos")
-
     }
     return (
         <div>

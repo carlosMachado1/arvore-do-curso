@@ -1,9 +1,8 @@
 class Disciplina {
-    constructor(nome, estado){
-        this.nome = nome,
-        this.estado = estado
-     }
-    //Getters 
+    constructor(nome, estado) {
+        ;(this.nome = nome), (this.estado = estado)
+    }
+    //Getters
     get Nome() {
         return this.nome
     }
