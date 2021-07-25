@@ -1,5 +1,62 @@
 .container {
     width: 100%;
     height: 100%;
-    background-color: red;
+}
+
+.inputField {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    pointer-events: none;
+    margin: .7rem 0 .4rem .625rem;
+}
+
+.input {
+    padding: .625rem 1rem .625rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 30rem;
+    height: 2.5rem;
+}
+
+.input::placeholder {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.addIcon {
+    margin-left: 1rem;
+    margin-top: .3rem;
+}
+
+.searchRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.dataRow {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    margin-top: 1rem
+}
+
+.dataName {
 }
