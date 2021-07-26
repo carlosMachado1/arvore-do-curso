@@ -1,3 +1,6 @@
+import { useState } from "react"
+import {EditCourse} from "./editCourse"
+import {ExcluirCurso} from "../components/excluirCurso"
 import ContentProps from "../interfaces/contentProps"
 import styles from "../styles/components/Content.module.css"
 import {
@@ -8,6 +11,20 @@ import {
 } from "react-icons/bs"
 
 export function Content(props: ContentProps) {
+    const [editarCurso, setEditarCurso] = useState(false)
+    const [excluirCurso, setExcluirCurso] = useState(false)
+    
+    
+    function handleClick() {
+        console.log("fazer requisição do curso")
+        setEditarCurso(true)
+    }
+
+
+    function handleDelete() {
+        setExcluirCurso(true)
+    }
+
 
     return (
         <div className={styles.container}>
@@ -34,10 +51,10 @@ export function Content(props: ContentProps) {
                         <div key={index} className={styles.dataRow}>
                             <div className={styles.dataName}>{item}</div>
                             <div>
-                                <span>
+                                <span onClick = {handleClick} className={styles.dataEdit}>
                                     <BsPencilSquare size="20px" />
                                 </span>
-                                <span>
+                                <span className={styles.dataDelete} onClick = {handleDelete}>
                                     <BsTrash size="20px" />
                                 </span>
                             </div>
@@ -45,6 +62,14 @@ export function Content(props: ContentProps) {
                     )
                 })}
             </div>
+
+            {editarCurso?(
+                <EditCourse />
+            ):(<></>)}
+
+            {excluirCurso?(
+                <ExcluirCurso />
+            ):(<></>)}
         </div>
     )
 }

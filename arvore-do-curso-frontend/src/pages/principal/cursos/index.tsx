@@ -6,6 +6,7 @@ import styles from "../../../styles/pages/Cursos.module.css"
 import {SideMenu} from "../../../components/sideMenu"
 
 
+
 async function SendData() {
     let courses
     const options: AxiosRequestConfig = {

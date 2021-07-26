@@ -73,3 +73,8 @@
 .dataName:hover {
 
 }
+
+.dataEdit, .dataDelete {
+    cursor: pointer;
+    margin-left: .5rem;
+}
