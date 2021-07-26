@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #77C664;
+    box-shadow: 2px 0 1px #64A554;
+    height: 100%;
+    border-radius: 0 10px 0 0;
+}
+
+.profile {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    padding: .625rem;
+    border-radius: 10px;
+    background-color: #64A554;
+    cursor: pointer;
+    transition: .2s all;
+    box-shadow: 0 2px 2px #000;
+}
+
+.profile:hover {
+    background-color: rgba(241, 192,185, .1);
+}
+
+.profileIcon {
+    margin-right: 0.625rem;
+}
+
+.profileText {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #EEE;
+    margin-right: 1rem;
+}
+
+.profileIconArrow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.cursos, .disciplinas {
+    padding: .8rem;
+    text-align: center;
+    border-bottom: 1px solid #EEE;
+}
+
+.cursos:hover, .disciplinas:hover {
+    background-color: rgba(241, 192,185, .3);
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.link {
+    font-size: 1.05rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #444;
+}

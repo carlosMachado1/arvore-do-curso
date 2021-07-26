@@ -1,9 +1,43 @@
 import Head from "next/head"
-import Login from "../interfaces/login"
-import { useForm, SubmitHandler } from "react-hook-form"
-import styles from "../styles/pages/Home.module.css"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import Login from "../interfaces/login"
+import axios, { AxiosRequestConfig } from "axios"
+import { useForm, SubmitHandler } from "react-hook-form"
+import styles from "../styles/pages/Home.module.css"
+
+
+
+
+async function SendData(data) {
+    const { search, searchType, accountType } = data
+    let users = []
+    const options: AxiosRequestConfig = {
+        url: "http://localhost:3030/nurse/search/name",
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
+            "Access-Control-Allow-Credentials": "true",
+        },
+        data: {
+            search,
+            searchType,
+            accountType,
+        },
+    }
+
+    await axios(options)
+        .then((response) => {
+            users = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    return users
+}
+
 
 export default function Home() {
     const router = useRouter()

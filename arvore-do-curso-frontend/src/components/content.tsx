@@ -8,18 +8,7 @@ import {
     BsTrash,
 } from "react-icons/bs"
 
-export function Content(props: ContentProps) {
-    const teste = [
-        {
-            nome: "Engenharia de Computação",
-        },
-        {
-            nome: "Engenharia Eletrica",
-        },
-        {
-            nome: "Engenharia Civil",
-        },
-    ]
+export function Content(props) {
 
     return (
         <div className={styles.container}>
@@ -42,7 +31,7 @@ export function Content(props: ContentProps) {
             </div>
 
             <div className={styles.data}>
-                {teste.map((item, index) => {
+                {props.lista.map((item, index) => {
                     return (
                         <div key={index} className={styles.dataRow}>
                             <div className={styles.dataName}>{item.nome}</div>

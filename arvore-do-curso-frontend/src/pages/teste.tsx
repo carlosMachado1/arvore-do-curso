@@ -6,7 +6,7 @@ export default function Teste() {
     return (
         <div>
             <div>
-                <Tab component={<Content />} />
+                <Tab />
             </div>
         </div>
     )
