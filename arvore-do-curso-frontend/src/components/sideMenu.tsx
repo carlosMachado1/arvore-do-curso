@@ -31,6 +31,10 @@ export function SideMenu(props: SideMenuProps) {
             <div className = {styles.disciplinas}>
                 <Link href="/principal/disciplinas"><a className = {styles.link}>Disciplinas</a></Link>
             </div>
+
+            <div className = {styles.logoff}>
+                <Link href="/"><a className = {styles.linkLogoff}>Logoff</a></Link>
+            </div>
         </div>
     )
 }

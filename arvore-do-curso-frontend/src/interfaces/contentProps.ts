@@ -1,3 +1,3 @@
 export default interface ContentProps {
-    lista: object
+    lista: Array<string>
 }

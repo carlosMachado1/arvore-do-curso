@@ -29,7 +29,13 @@ async function SendData() {
 
 export default function Cursos() {
     const usuario = "Carlos Machado"
-    // const cursos = SendData()
+    let cursos = SendData()
+    cursos = [
+        "Engenharia de Computação",
+        "Engenharia Civil",
+        "Engenharia de Software",
+    ]
+
 
     return (
         <div>
@@ -43,7 +49,7 @@ export default function Cursos() {
                 </div>
 
                 <div className={styles.content}>
-                <Tab component = {<Content lista={teste}/>}/>
+                <Tab component = {<Content lista={cursos}/>}/>
                 </div>
             </div>
         </div>

@@ -61,3 +61,21 @@
     text-decoration: none;
     color: #444;
 }
+
+.logoff {
+    padding: .8rem;
+    text-align: center;
+    border-bottom: 1px solid #EEE;
+    cursor: pointer;
+}
+
+.logoff:hover {
+    background-color: rgba(218,0,55, .6)
+}
+
+.linkLogoff {
+    font-size: 1.05rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #444;
+}
