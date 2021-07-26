@@ -3,12 +3,13 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { BsFillXSquareFill } from "react-icons/bs"
 import { useRouter } from "next/router"
 import CursosID from "../interfaces/cursosID"
-export function EditCourse() {
+
+
+export function CadastrarCurso() {
     const router = useRouter()
     const {
         register,
         handleSubmit,
-        formState: { errors },
     } = useForm<CursosID>()
     const onSubmit: SubmitHandler<CursosID> = async (data) => {
         console.log(data)
@@ -44,7 +45,7 @@ export function EditCourse() {
                 />
 
                 <button type="submit" className={styles.button}>
-                    Cadastrar
+                    Salvar
                 </button>
             </form>
         </div>

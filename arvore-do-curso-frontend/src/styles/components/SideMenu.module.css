@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    background-color: #77C664;
-    box-shadow: 2px 0 1px #64A554;
+    background-color: #77c664;
+    box-shadow: 2px 0 1px #64a554;
     height: 100%;
     width: 300px;
     border-radius: 0 10px 0 0;
@@ -14,16 +14,16 @@
     position: relative;
     flex-direction: row;
     align-items: center;
-    padding: .625rem;
+    padding: 0.625rem;
     border-radius: 10px;
-    background-color: #64A554;
+    background-color: #64a554;
     cursor: pointer;
-    transition: .2s all;
+    transition: 0.2s all;
     box-shadow: 0 2px 2px #000;
 }
 
 .profile:hover {
-    background-color: rgba(241, 192,185, .1);
+    background-color: rgba(241, 192, 185, 0.1);
 }
 
 .profileIcon {
@@ -33,7 +33,7 @@
 .profileText {
     font-size: 1.3rem;
     font-weight: 500;
-    color: #EEE;
+    color: #eee;
     margin-right: 1rem;
 }
 
@@ -43,16 +43,18 @@
     right: 0;
 }
 
-.cursos, .disciplinas {
-    padding: .8rem;
+.cursos,
+.disciplinas {
+    padding: 0.8rem;
     text-align: center;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #eee;
 }
 
-.cursos:hover, .disciplinas:hover {
-    background-color: rgba(241, 192,185, .3);
+.cursos:hover,
+.disciplinas:hover {
+    background-color: rgba(241, 192, 185, 0.3);
     cursor: pointer;
-    transition: .2s all;
+    transition: 0.2s all;
 }
 
 .link {
@@ -63,14 +65,14 @@
 }
 
 .logoff {
-    padding: .8rem;
+    padding: 0.8rem;
     text-align: center;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #eee;
     cursor: pointer;
 }
 
 .logoff:hover {
-    background-color: rgba(218,0,55, .6)
+    background-color: rgba(218, 0, 55, 0.6);
 }
 
 .linkLogoff {

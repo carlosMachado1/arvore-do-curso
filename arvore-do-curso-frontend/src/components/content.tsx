@@ -1,30 +1,30 @@
 import { useState } from "react"
-import {EditCourse} from "./editCourse"
-import {ExcluirCurso} from "../components/excluirCurso"
+import { EditCourse } from "./editCourse"
+import { useRouter } from "next/router"
+import { ExcluirCurso } from "../components/excluirCurso"
+import {CadastrarCurso} from "../components/cadastrarCurso"
 import ContentProps from "../interfaces/contentProps"
 import styles from "../styles/components/Content.module.css"
-import {
-    BsSearch,
-    BsPlusSquare,
-    BsPencilSquare,
-    BsTrash,
-} from "react-icons/bs"
+import { BsSearch, BsPlusSquare, BsPencilSquare, BsTrash } from "react-icons/bs"
 
 export function Content(props: ContentProps) {
+    const router = useRouter()
     const [editarCurso, setEditarCurso] = useState(false)
     const [excluirCurso, setExcluirCurso] = useState(false)
-    
-    
+    const [cadastrarCurso, setCadastrarCurso] = useState(false)
+
     function handleClick() {
         console.log("fazer requisição do curso")
         setEditarCurso(true)
     }
 
-
     function handleDelete() {
         setExcluirCurso(true)
     }
 
+    function handleCadastro() {
+        setCadastrarCurso(true)
+    }
 
     return (
         <div className={styles.container}>
@@ -40,21 +40,27 @@ export function Content(props: ContentProps) {
                     />
                 </span>
 
-                <span className={styles.addIcon}>
+                <span className={styles.addIcon} onClick = {handleCadastro}>
                     <BsPlusSquare size="30px" />
                 </span>
             </div>
 
             <div className={styles.data}>
-                {props.lista.map((item:string, index: number) => {
+                {props.lista.map((item: string, index: number) => {
                     return (
                         <div key={index} className={styles.dataRow}>
                             <div className={styles.dataName}>{item}</div>
                             <div>
-                                <span onClick = {handleClick} className={styles.dataEdit}>
+                                <span
+                                    onClick={handleClick}
+                                    className={styles.dataEdit}
+                                >
                                     <BsPencilSquare size="20px" />
                                 </span>
-                                <span className={styles.dataDelete} onClick = {handleDelete}>
+                                <span
+                                    className={styles.dataDelete}
+                                    onClick={handleDelete}
+                                >
                                     <BsTrash size="20px" />
                                 </span>
                             </div>
@@ -63,12 +69,12 @@ export function Content(props: ContentProps) {
                 })}
             </div>
 
-            {editarCurso?(
-                <EditCourse />
-            ):(<></>)}
+            {editarCurso ? <EditCourse /> : <></>}
 
-            {excluirCurso?(
-                <ExcluirCurso />
+            {excluirCurso ? <ExcluirCurso /> : <></>}
+
+            {cadastrarCurso?(
+                <CadastrarCurso />
             ):(<></>)}
         </div>
     )

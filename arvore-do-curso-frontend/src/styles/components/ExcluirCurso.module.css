@@ -7,7 +7,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(136,202,94, .4)
+    background-color: rgba(136, 202, 94, 0.4);
 }
 
 .data {
@@ -36,34 +36,34 @@
     margin: 1rem 0;
 }
 
-.salvar{
-    padding: .625rem 1rem;
+.salvar {
+    padding: 0.625rem 1rem;
     margin: 0 2rem;
-    background-color: #77C664;
-    color: #2E384D;
+    background-color: #77c664;
+    color: #2e384d;
     border: none;
     border-radius: 5px;
     font-size: 1.3rem;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 }
 
-.cancelar{
-    padding: .625rem 1rem;
+.cancelar {
+    padding: 0.625rem 1rem;
     margin: 0 2rem;
-    background-color: #F1C0B9;
-    color: #2E384D;
+    background-color: #f1c0b9;
+    color: #2e384d;
     border: none;
     border-radius: 5px;
     font-size: 1.3rem;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .cancelar:hover {
-    background-color: rgba(241,192,185, .8) ;
+    background-color: rgba(241, 192, 185, 0.8);
 }
 
 .salvar:hover {
-    background-color: rgba(119,198,100, .8) ;
+    background-color: rgba(119, 198, 100, 0.8);
 }

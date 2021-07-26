@@ -6,8 +6,6 @@ import axios, { AxiosRequestConfig } from "axios"
 import { useForm, SubmitHandler } from "react-hook-form"
 import styles from "../styles/pages/Home.module.css"
 
-
-
 async function SendData(data: Login) {
     const { usuario, senha } = data
     let users
@@ -16,7 +14,7 @@ async function SendData(data: Login) {
         method: "POST",
         data: {
             email: usuario,
-            password: senha
+            password: senha,
         },
     }
 
@@ -29,7 +27,6 @@ async function SendData(data: Login) {
         })
     return users
 }
-
 
 export default function Home() {
     const router = useRouter()
