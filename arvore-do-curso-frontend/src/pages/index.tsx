@@ -8,23 +8,15 @@ import styles from "../styles/pages/Home.module.css"
 
 
 
-
-async function SendData(data) {
-    const { search, searchType, accountType } = data
-    let users = []
+async function SendData(data: Login) {
+    const { usuario, senha } = data
+    let users
     const options: AxiosRequestConfig = {
-        url: "http://localhost:3030/nurse/search/name",
+        url: "https://f4a64eed3670.ngrok.io/login",
         method: "POST",
-        headers: {
-            "Content-Type": "application/json;charset=UTF-8",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
-            "Access-Control-Allow-Credentials": "true",
-        },
         data: {
-            search,
-            searchType,
-            accountType,
+            email: usuario,
+            password: senha
         },
     }
 
@@ -46,9 +38,10 @@ export default function Home() {
         handleSubmit,
         formState: { errors },
     } = useForm<Login>()
-    const onSubmit: SubmitHandler<Login> = (data) => {
+    const onSubmit: SubmitHandler<Login> = async (data) => {
         console.log(data)
-        router.push("/principal/cursos")
+        let user = await SendData(data)
+        console.log(user)
     }
 
     return (

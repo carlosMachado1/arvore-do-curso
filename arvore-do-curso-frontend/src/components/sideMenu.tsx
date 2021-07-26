@@ -1,5 +1,6 @@
 import Link from "next/link"
 import {useState} from "react"
+import { useRouter } from 'next/router'
 import SideMenuProps from "../interfaces/sideMenu"
 import styles from "../styles/components/SideMenu.module.css"
 import {BsPeopleCircle, BsFillCaretRightFill} from 'react-icons/bs'
@@ -7,10 +8,10 @@ import {BsPeopleCircle, BsFillCaretRightFill} from 'react-icons/bs'
 
 
 export function SideMenu(props: SideMenuProps) {
-    const [editarPerfil, setEditarPefil] = useState(true)
+    const router = useRouter()
 
     function editProfile() {
-        setEditarPefil(true)
+        router.push('/principal/perfil')
     }
 
 
