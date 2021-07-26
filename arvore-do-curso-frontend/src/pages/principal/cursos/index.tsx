@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { Tab } from "../../../components/tab"
+import {Content} from "../../../components/content"
 import styles from "../../../styles/pages/Cursos.module.css"
 
 export default function Cursos() {
@@ -10,8 +11,12 @@ export default function Cursos() {
             </Head>
 
             <div className={styles.container}>
-                <div className={styles.tabContent}>
-                    <Tab component={<div></div>} />
+                <div className={styles.navigator}>
+                    asuhaudhaui
+                </div>
+
+                <div className={styles.content}>
+                    ashuahdsua
                 </div>
             </div>
         </div>
