@@ -19,5 +19,34 @@ module.exports = {
         } catch (error) {
             next(error)
         }
+    },
+    
+    async update(request, response, next){
+        try {
+            const {name, amount_of_period} = request.body
+            const { id } = request.params
+
+            await knex('courses').update({
+                name, amount_of_period
+            }).where({ id })
+
+            return response.status(204).send()
+        } catch (error) {
+            next(error)
+        }
+    },
+
+    async delete(request, response, next) {
+        try {
+            const { id } = request.params
+
+            await knex('courses')
+            .where({ id }).del()
+            
+
+            return response.status(204).send()
+        } catch (error) {
+            next(error)
+        }
     }
 }
