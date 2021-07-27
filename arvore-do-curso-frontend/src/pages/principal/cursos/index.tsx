@@ -9,7 +9,7 @@ import { SideMenu } from "../../../components/sideMenu"
 async function SendData() {
     let courses
     const options: AxiosRequestConfig = {
-        url: "https://f4a64eed3670.ngrok.io/courses",
+        url: "http:localhost:5000/courses",
         method: "GET",
         data: {},
     }

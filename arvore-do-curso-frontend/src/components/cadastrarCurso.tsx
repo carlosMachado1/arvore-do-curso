@@ -1,14 +1,42 @@
 import styles from "../styles/components/EditCourse.module.css"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { BsFillXSquareFill } from "react-icons/bs"
+import axios, { AxiosRequestConfig } from "axios"
 import { useRouter } from "next/router"
 import CursosID from "../interfaces/cursosID"
+
+
+async function SendData(data: CursosID) {
+    const { nome, qntPeriodo } = data
+    let users
+    const options: AxiosRequestConfig = {
+        url: "http://localhost:5000/courses",
+        method: "POST",
+        data: {
+            name: nome,
+            amount_of_period: qntPeriodo,
+        },
+    }
+
+    await axios(options)
+        .then((response) => {
+            users = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    return users
+}
+
 
 export function CadastrarCurso() {
     const router = useRouter()
     const { register, handleSubmit } = useForm<CursosID>()
     const onSubmit: SubmitHandler<CursosID> = async (data) => {
-        console.log(data)
+        const cadastrar = await SendData(data)
+        if (cadastrar == "") {
+            router.reload()
+        }
     }
 
     function handleClick() {
@@ -41,7 +69,7 @@ export function CadastrarCurso() {
                 />
 
                 <button type="submit" className={styles.button}>
-                    Salvar
+                    Cadastrar
                 </button>
             </form>
         </div>

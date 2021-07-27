@@ -31,7 +31,6 @@ async function SendData(data: Login) {
 
 export default function Home() {
     const router = useRouter()
-    const { user, setUser } = useGlobal()
     const {
         register,
         handleSubmit,
@@ -40,9 +39,13 @@ export default function Home() {
     const onSubmit: SubmitHandler<Login> = async (data) => {
         console.log(data)
         const login = await SendData(data)
+        console.log(login)
         if (login.id != "") {
+            localStorage.setItem("id", login.user.id)
+            localStorage.setItem("nome", login.user.name)
             router.push("/principal/cursos")
         }
+
     }
 
     return (

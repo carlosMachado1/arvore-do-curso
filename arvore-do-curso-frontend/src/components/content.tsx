@@ -1,17 +1,45 @@
 import { useState } from "react"
 import { EditCourse } from "./editCourse"
 import { useRouter } from "next/router"
+import axios, { AxiosRequestConfig } from "axios"
 import { ExcluirCurso } from "../components/excluirCurso"
 import { CadastrarCurso } from "../components/cadastrarCurso"
 import ContentProps from "../interfaces/contentProps"
 import styles from "../styles/components/Content.module.css"
 import { BsSearch, BsPlusSquare, BsPencilSquare, BsTrash } from "react-icons/bs"
 
+
+async function SendData() {
+    let users
+    const options: AxiosRequestConfig = {
+        url: "http://localhost:5000/courses",
+        method: "GET",
+        data: {
+        },
+    }
+
+    await axios(options)
+        .then((response) => {
+            users = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    return users
+}
+
+
 export function Content(props: ContentProps) {
-    const router = useRouter()
     const [editarCurso, setEditarCurso] = useState(false)
     const [excluirCurso, setExcluirCurso] = useState(false)
     const [cadastrarCurso, setCadastrarCurso] = useState(false)
+
+    let cursos = async () => {
+        const teste = await SendData()
+        return teste
+    }
+
+    console.log(cursos)
 
     function handleClick() {
         console.log("fazer requisição do curso")

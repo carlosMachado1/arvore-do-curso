@@ -3,6 +3,28 @@ import { BsFillXSquareFill } from "react-icons/bs"
 import DisciplinaID from "../interfaces/disciplinaID"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useRouter } from "next/router"
+import axios, { AxiosRequestConfig } from "axios"
+
+async function SendData(id: number, nome: string, qntPeriodo:number) {
+    let users
+    const options: AxiosRequestConfig = {
+        url: `http://localhost:5000/discipline/${id}`,
+        method: "PUT",
+        data: {
+            name: nome,
+            amount_of_period: qntPeriodo
+        },
+    }
+
+    await axios(options)
+        .then((response) => {
+            users = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    return users
+}
 
 export function EditDisciplina() {
     const router = useRouter()

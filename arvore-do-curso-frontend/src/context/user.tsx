@@ -1,18 +1,40 @@
-import { createContext, useContext, useState } from "react"
-import DadosGlobais from "../interfaces/dadosGlobais"
+import { createContext, useContext, useState, ReactNode } from "react"
 
-export const UserContext = createContext({})
+interface UserContextData { 
+    nome: string
+    email: string
+    id: string
+    handleNome: (nome: string) => void
+    handleEmail: (email: string) => void
+    handleID: (id: string) => void
+}
 
-export default function UserProvider({ children }: any) {
-    const [user, setUser] = useState({
-        nome: "",
-        email: "",
-        disciplinas: [],
-        cursos: [],
-    })
+interface UserProviderProps {
+    children: ReactNode
+}
+
+
+export const UserContext = createContext({} as UserContextData)
+
+export default function UserProvider({ children }: UserProviderProps) {
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
+    const [id, setID] = useState("")
+
+    function handleNome(nome: string) {
+        setNome(nome)
+    }
+
+    function handleEmail(email: string) {
+        setEmail(email)
+    }
+
+    function handleID(id: string) {
+        setID(id)
+    }
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ nome, email, id, handleNome, handleEmail, handleID }}>
             {children}
         </UserContext.Provider>
     )
@@ -20,6 +42,6 @@ export default function UserProvider({ children }: any) {
 
 export function useGlobal() {
     const context = useContext(UserContext)
-    const { user, setUser } = context
-    return { user, setUser }
+    const { nome, email, id, handleNome, handleEmail, handleID } = context
+    return { nome, email, id, handleNome, handleEmail, handleID  }
 }
