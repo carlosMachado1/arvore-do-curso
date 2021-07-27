@@ -20,6 +20,6 @@ export default function UserProvider({ children }: any) {
 
 export function useGlobal() {
     const context = useContext(UserContext)
-    const {user, setUser} = context
-    return {user, setUser}
+    const { user, setUser } = context
+    return { user, setUser }
 }

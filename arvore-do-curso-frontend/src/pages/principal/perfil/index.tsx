@@ -5,11 +5,6 @@ import { Cadastro } from "../../../components/cadastro"
 import { SideMenu } from "../../../components/sideMenu"
 import styles from "../../../styles/pages/Perfil.module.css"
 
-
-
-
-
-
 export default function Perfil() {
     return (
         <div>

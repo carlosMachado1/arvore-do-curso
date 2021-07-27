@@ -5,8 +5,7 @@ import Login from "../interfaces/login"
 import axios, { AxiosRequestConfig } from "axios"
 import { useForm, SubmitHandler, set } from "react-hook-form"
 import styles from "../styles/pages/Home.module.css"
-import UserProvider, {useGlobal} from "../context/user"
-
+import UserProvider, { useGlobal } from "../context/user"
 
 async function SendData(data: Login) {
     const { usuario, senha } = data
@@ -41,7 +40,7 @@ export default function Home() {
     const onSubmit: SubmitHandler<Login> = async (data) => {
         console.log(data)
         const login = await SendData(data)
-        if(login.id != ""){
+        if (login.id != "") {
             router.push("/principal/cursos")
         }
     }

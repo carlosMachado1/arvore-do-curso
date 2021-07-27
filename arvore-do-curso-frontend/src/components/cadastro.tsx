@@ -5,7 +5,6 @@ import styles from "../styles/components/Cadastro.module.css"
 import { CadastroForm } from "../interfaces/cadastro"
 import { useForm, SubmitHandler } from "react-hook-form"
 
-
 async function SendData(data: CadastroForm) {
     const { nome, email, senha } = data
     let users
@@ -15,7 +14,7 @@ async function SendData(data: CadastroForm) {
         data: {
             email: email,
             password: senha,
-            name: nome
+            name: nome,
         },
     }
 
@@ -28,7 +27,6 @@ async function SendData(data: CadastroForm) {
         })
     return users
 }
-
 
 export function Cadastro() {
     const router = useRouter()
