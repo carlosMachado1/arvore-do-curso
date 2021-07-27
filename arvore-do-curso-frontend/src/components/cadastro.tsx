@@ -1,8 +1,34 @@
 import { useRouter } from "next/router"
 import { BsPeopleCircle } from "react-icons/bs"
+import axios, { AxiosRequestConfig } from "axios"
 import styles from "../styles/components/Cadastro.module.css"
 import { CadastroForm } from "../interfaces/cadastro"
 import { useForm, SubmitHandler } from "react-hook-form"
+
+
+async function SendData(data: CadastroForm) {
+    const { nome, email, senha } = data
+    let users
+    const options: AxiosRequestConfig = {
+        url: "http://localhost:5000/login",
+        method: "POST",
+        data: {
+            email: email,
+            password: senha,
+            name: nome
+        },
+    }
+
+    await axios(options)
+        .then((response) => {
+            users = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    return users
+}
+
 
 export function Cadastro() {
     const router = useRouter()
@@ -80,7 +106,7 @@ export function Cadastro() {
 
                 <div className={styles.inputGroup}>
                     <button type="submit" className={styles.button}>
-                        Cadastrar
+                        Salvar
                     </button>
                 </div>
             </form>

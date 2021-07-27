@@ -42,11 +42,9 @@ export default function Cadastro() {
     const onSubmit: SubmitHandler<CadastroForm> = async (data) => {
         if (data.senha === data.confirmarSenha) {
             let user = await SendData(data)
-            setUser((prevState) => ({
-                ...prevState,
-                nome: data.nome,
-                email: data.email,
-            }))
+            if (user == "") {
+                router.push("/principal/cursos")
+            }
         }
     }
     return (

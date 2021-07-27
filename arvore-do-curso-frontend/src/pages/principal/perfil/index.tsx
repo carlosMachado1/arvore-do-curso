@@ -1,8 +1,14 @@
 import Head from "next/head"
-import { SideMenu } from "../../../components/sideMenu"
 import { Tab } from "../../../components/tab"
+
 import { Cadastro } from "../../../components/cadastro"
+import { SideMenu } from "../../../components/sideMenu"
 import styles from "../../../styles/pages/Perfil.module.css"
+
+
+
+
+
 
 export default function Perfil() {
     return (
