@@ -20,5 +20,32 @@ module.exports = {
         } catch (error) {
             next(error)
         }
+    },
+
+    async update(request, response, next) {
+        try {
+            const {name, state} = request.body
+            const {id} = request.params
+
+            const disciplineUpdated = await knex('disciplines').update({
+                name, state
+            }).where({ id })
+
+            return response.status(204).json(disciplineUpdated)
+        } catch (error) {
+            next(error)
+        }
+    },
+
+    async delete(request, response, next) {
+        try {
+            const {id} = request.params
+
+            await knex('disciplines').where({ id }).del()
+
+            return response.status(204).send()
+        } catch (error) {
+            next(error)
+        }
     }
 }
