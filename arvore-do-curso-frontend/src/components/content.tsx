@@ -2,7 +2,7 @@ import { useState } from "react"
 import { EditCourse } from "./editCourse"
 import { useRouter } from "next/router"
 import { ExcluirCurso } from "../components/excluirCurso"
-import {CadastrarCurso} from "../components/cadastrarCurso"
+import { CadastrarCurso } from "../components/cadastrarCurso"
 import ContentProps from "../interfaces/contentProps"
 import styles from "../styles/components/Content.module.css"
 import { BsSearch, BsPlusSquare, BsPencilSquare, BsTrash } from "react-icons/bs"
@@ -40,7 +40,7 @@ export function Content(props: ContentProps) {
                     />
                 </span>
 
-                <span className={styles.addIcon} onClick = {handleCadastro}>
+                <span className={styles.addIcon} onClick={handleCadastro}>
                     <BsPlusSquare size="30px" />
                 </span>
             </div>
@@ -73,9 +73,7 @@ export function Content(props: ContentProps) {
 
             {excluirCurso ? <ExcluirCurso /> : <></>}
 
-            {cadastrarCurso?(
-                <CadastrarCurso />
-            ):(<></>)}
+            {cadastrarCurso ? <CadastrarCurso /> : <></>}
         </div>
     )
 }

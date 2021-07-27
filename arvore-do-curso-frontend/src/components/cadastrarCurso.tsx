@@ -4,13 +4,9 @@ import { BsFillXSquareFill } from "react-icons/bs"
 import { useRouter } from "next/router"
 import CursosID from "../interfaces/cursosID"
 
-
 export function CadastrarCurso() {
     const router = useRouter()
-    const {
-        register,
-        handleSubmit,
-    } = useForm<CursosID>()
+    const { register, handleSubmit } = useForm<CursosID>()
     const onSubmit: SubmitHandler<CursosID> = async (data) => {
         console.log(data)
     }

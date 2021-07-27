@@ -1,3 +1,1 @@
-export default interface CadastrarCursoID {
-    
-}
+export default interface CadastrarCursoID {}
