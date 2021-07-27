@@ -3,6 +3,30 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { BsFillXSquareFill } from "react-icons/bs"
 import { useRouter } from "next/router"
 import CadastrarDisciplinaID from "../interfaces/cadastrarDisciplinaID"
+import axios, { AxiosRequestConfig } from "axios"
+
+async function SendData(data: CadastrarDisciplinaID) {
+    const { nome, periodo, preRequisitos } = data
+    let users
+    const options: AxiosRequestConfig = {
+        url: "http://localhost:5000/discipline",
+        method: "POST",
+        data: {
+            name: nome,
+            period: periodo,
+            preRequisit: preRequisitos
+        },
+    }
+
+    await axios(options)
+        .then((response) => {
+            users = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    return users
+}
 
 export function CadastrarDisciplina() {
     const router = useRouter()
